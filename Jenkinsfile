@@ -26,11 +26,25 @@ pipeline {
                 sh 'docker build -t traveloop-backend ./Backend'
             }
         }
+
+        stage('Deploy Containers') {
+            steps {
+                sh '''
+                cd /home/ubuntu/traveloop
+
+                docker compose pull
+
+                docker compose down
+
+                docker compose up -d
+                '''
+            }
+        }
     }
 
     post {
         success {
-            echo 'Docker Images Built Successfully'
+            echo 'Build & Deployment Successful'
         }
 
         failure {
