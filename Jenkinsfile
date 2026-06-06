@@ -1,7 +1,7 @@
 pipeline {
 agent any
 
-```
+
 stages {
 
     stage('Webhook Triggered') {
@@ -50,6 +50,6 @@ post {
         echo 'Pipeline Failed'
     }
 }
-```
+
 
 }
