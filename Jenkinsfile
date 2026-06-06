@@ -18,17 +18,13 @@ stages {
 
     stage('Build Frontend Docker Image') {
         steps {
-            sh '''
-            docker build -t traveloop-frontend ./Frontend
-            '''
+            sh 'docker build -t traveloop-frontend ./Frontend'
         }
     }
 
     stage('Build Backend Docker Image') {
         steps {
-            sh '''
-            docker build -t traveloop-backend ./Backend
-            '''
+            sh 'docker build -t traveloop-backend ./Backend'
         }
     }
 
